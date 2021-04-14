@@ -10,3 +10,10 @@ spring:
     username: penta
     password: bar
 
+eureka:
+  #enabled: true
+  client:
+    #registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka

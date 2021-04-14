@@ -12,3 +12,11 @@ spring:
 feign:
   hystrix:
     enabled: true
+
+eureka:
+  #enabled: true
+  client:
+    #registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka
