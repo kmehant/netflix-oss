@@ -16,9 +16,20 @@ cd review-service
 mvn clean package
 
 docker network create my-network
-
 docker-compose up --build
 ```
+
+### option 2
+
+if we add `<packaging>pom</packaging>` on the base pom.xml and `<relativePath>../</relativePath>` on each server `parent` section, we can do:
+
+```
+mvn clean package
+docker network create my-network
+docker-compose up --build
+```
+
+### checks
 
 ```
 eureka: http://localhost:8761
