@@ -17,3 +17,7 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://eureka:8761/eureka
+  instance:
+    metadataMap:
+      instanceId: review-service:8083
+    preferIpAddress: true

@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    move2kube.konveyor.io/service.expose: "true"
+  creationTimestamp: null
+  labels:
+    move2kube.konveyor.io/service: movie-service
+  name: movie-service
+spec:
+  ports:
+    - name: port-8082
+      port: 8082
+      targetPort: 8082
+  selector:
+    move2kube.konveyor.io/service: movie-service
+  type: ClusterIP
+status:
+  loadBalancer: {}
+
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name: movie-service
+# spec:
+#   ports:
+#   - port: 8082
+#     protocol: TCP
+#     targetPort: 8082
+#   selector:
+#     app: movie-service

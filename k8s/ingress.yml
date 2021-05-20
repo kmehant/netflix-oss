@@ -1,0 +1,48 @@
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   creationTimestamp: null
+#   labels:
+#     move2kube.konveyor.io/service: myproject
+#   name: myproject
+# spec:
+#   rules:
+#   - http:
+#       paths:
+#         # - backend:
+#         #     service:
+#         #       name: eureka
+#         #       port:
+#         #         name: port-8761
+#         #   path: /
+#         #   pathType: Prefix
+#         - backend:
+#             service:
+#               name: movie-service
+#               port:
+#                 name: port-8082
+#           path: /
+#           pathType: Prefix
+#         # - backend:
+#         #     service:
+#         #       name: review-service
+#         #       port:
+#         #         name: port-8083
+#         #   path: /
+#         #   pathType: Prefix
+# status:
+#   loadBalancer: {}
+
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: myproject
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: movie-service
+          servicePort: 8082

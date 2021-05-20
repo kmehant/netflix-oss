@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    move2kube.konveyor.io/service.expose: "true"
+  creationTimestamp: null
+  labels:
+    move2kube.konveyor.io/service: eureka
+  name: eureka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      move2kube.konveyor.io/service: eureka
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        move2kube.konveyor.io/service.expose: "true"
+      creationTimestamp: null
+      labels:
+        move2kube.konveyor.io/service: eureka
+      name: eureka
+    spec:
+      containers:
+        - env:
+            - name: Dummy
+              value: dummy
+          image: docker.io/kmehant/eureka:latest
+          imagePullPolicy: Always
+          name: eureka
+          ports:
+            - containerPort: 8761
+              protocol: TCP
+          resources: {}
+      restartPolicy: Always
+status: {}
+
+
+# kind: Deployment
+# apiVersion: apps/v1
+# metadata:
+#   name: eureka
+# spec:
+#   replicas: 1
+#   template:
+#     metadata:
+#       labels:
+#         app: eureka
+#     spec:
+#       containers:
+#       - name: eureka
+#         image: docker.io/kmehant/eureka:latest
+#         imagePullPolicy: Always
+#         ports:
+#         - containerPort: 8761
+#           protocol: TCP
+#       restartPolicy: Always

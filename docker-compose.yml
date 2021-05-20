@@ -18,9 +18,6 @@ services:
     #image: review-service
     links:
       - eureka 
-    depends_on:
-      eureka:
-        condition: service_healthy
     ports:
       - 8083:8083
     networks:
@@ -30,9 +27,6 @@ services:
     #image: movie-service
     links:
       - eureka
-    depends_on:
-      eureka:
-        condition: service_healthy
     ports:
       - 8082:8082
     networks:
@@ -40,4 +34,3 @@ services:
 
 networks:
   my-network:
-    name: my-network
