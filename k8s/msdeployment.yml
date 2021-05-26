@@ -7,8 +7,9 @@ metadata:
   labels:
     move2kube.konveyor.io/service: movie-service
   name: movie-service
+  namespace: mehant
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       move2kube.konveyor.io/service: movie-service

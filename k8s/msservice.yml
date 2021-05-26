@@ -7,6 +7,7 @@ metadata:
   labels:
     move2kube.konveyor.io/service: movie-service
   name: movie-service
+  namespace: mehant
 spec:
   ports:
     - name: port-8082
@@ -15,6 +16,7 @@ spec:
   selector:
     move2kube.konveyor.io/service: movie-service
   type: ClusterIP
+  
 status:
   loadBalancer: {}
 

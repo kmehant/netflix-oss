@@ -7,6 +7,7 @@ metadata:
   labels:
     move2kube.konveyor.io/service: review-service
   name: review-service
+  namespace: mehant
 spec:
   ports:
     - name: port-8083

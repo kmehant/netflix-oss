@@ -7,6 +7,7 @@ metadata:
   labels:
     move2kube.konveyor.io/service: eureka
   name: eureka
+  namespace: mehant
 spec:
   ports:
     - name: port-8761
