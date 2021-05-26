@@ -10,14 +10,14 @@ spring:
     username: penta
     password: bar
 
-eureka:
-  #enabled: true
-  client:
-    #registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://eureka:8761/eureka
-  instance:
-    metadataMap:
-      instanceId: review-service:8083
-    preferIpAddress: true
+# eureka:
+#   #enabled: true
+#   client:
+#     #registerWithEureka: true
+#     fetchRegistry: true
+#     serviceUrl:
+#       defaultZone: http://eureka:8761/eureka
+#   instance:
+#     metadataMap:
+#       instanceId: review-service:8083
+#     preferIpAddress: true
