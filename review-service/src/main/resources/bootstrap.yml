@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: review-service
+  cloud:
+    config:
+      discovery:
+        enabled: false
+      uri: http://ms-config-server:8888
+
+#   datasource:
+#     url: jdbc:h2:mem:reviews
+#     driver-class-name: org.h2.Driver
+#     username: penta
+#     password: bar
+
+# eureka:
+#   #enabled: true
+#   client:
+#     #registerWithEureka: true
+#     fetchRegistry: true
+#     serviceUrl:
+#       defaultZone: http://eureka:8761/eureka
+#   instance:
+#     metadataMap:
+#       instanceId: review-service:8083
+#     preferIpAddress: true

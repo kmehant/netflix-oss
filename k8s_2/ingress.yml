@@ -80,3 +80,13 @@ spec:
        backend:
          serviceName: review-service
          servicePort: 8083
+     - path: /movie-service
+       pathType: Prefix
+       backend:
+         serviceName: ms-config-server
+         servicePort: 8888
+     - path: /review-service
+       pathType: Prefix
+       backend:
+         serviceName: ms-config-server
+         servicePort: 8888

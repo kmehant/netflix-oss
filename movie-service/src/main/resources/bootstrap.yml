@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: movie-service
+  cloud:
+    config:
+      discovery:
+        enabled: false
+      uri: http://ms-config-server:8888
+
+# feign:
+#   hystrix:
+#     enabled: true
+
+# eureka:
+#   #enabled: true
+#   client:
+#     #registerWithEureka: true
+#     fetchRegistry: true
+#     serviceUrl:
+#       defaultZone: http://eureka:8761/eureka
+#   instance:
+#     metadataMap:
+#       instanceId: movie-service:8082
+#     preferIpAddress: true
