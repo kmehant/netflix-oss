@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    move2kube.konveyor.io/service.expose: "true"
+  creationTimestamp: null
+  labels:
+    move2kube.konveyor.io/service: ms-config-server
+  name: ms-config-server
+  namespace: mehant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      move2kube.konveyor.io/service: ms-config-server
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        move2kube.konveyor.io/service.expose: "true"
+      creationTimestamp: null
+      labels:
+        move2kube.konveyor.io/service: ms-config-server
+      name: ms-config-server
+    spec:
+      containers:
+        - env:
+            - name: Dummy
+              value: dummy
+          image: docker.io/kmehant/ms-config-server:latest
+          imagePullPolicy: Always
+          name: ms-config-server
+          ports:
+            - containerPort: 8888
+              protocol: TCP
+          resources: {}
+      restartPolicy: Always
+status: {}
+
+
+
+# kind: Deployment
+# apiVersion: apps/v1
+# metadata:
+#   name: ms-config-server
+# spec:
+#   replicas: 1
+#   template:
+#     metadata:
+#       labels:
+#         app: ms-config-server
+#     spec:
+#       containers:
+#       - name: ms-config-server
+#         image: docker.io/kmehant/ms-config-server:latest
+#         imagePullPolicy: Always
+#         ports:
+#         - containerPort: 8082
+#           protocol: TCP
+#       restartPolicy: Always

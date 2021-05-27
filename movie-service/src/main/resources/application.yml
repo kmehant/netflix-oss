@@ -8,10 +8,15 @@ spring:
     driver-class-name: org.h2.Driver
   username: penta
   password: bar
+  cloud:
+    config:
+      discovery:
+        enabled: false
+      uri: http://ms-config-server:8888
 
-feign:
-  hystrix:
-    enabled: true
+# feign:
+#   hystrix:
+#     enabled: true
 
 # eureka:
 #   #enabled: true
