@@ -3,11 +3,11 @@ server:
 spring:
   application:
     name: review-service
-  cloud:
-    config:
-      discovery:
-        enabled: false
-      uri: http://ms-config-server:8888
+  # cloud:
+  #   config:
+  #     discovery:
+  #       enabled: false
+  #     uri: http://ms-config-server:8888
 
 #   datasource:
 #     url: jdbc:h2:mem:reviews

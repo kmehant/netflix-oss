@@ -25,8 +25,10 @@ spec:
     spec:
       containers:
         - env:
-            - name: Dummy
-              value: dummy
+            - name: SPRING_CONFIG_NAME
+              value: application,review-service
+            - name: SPRING_CONFIG_ADDITIONAL-LOCATION
+              value: classpath:/,classpath:/config/,file:/,file:config/,file:/confs/
           image: docker.io/kmehant/review-service:latest
           imagePullPolicy: Always
           name: review-service
@@ -34,6 +36,13 @@ spec:
             - containerPort: 8083
               protocol: TCP
           resources: {}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /confs
+      volumes:
+        - name: config-volume
+          configMap:
+            name: rsconfigmap
       restartPolicy: Always
 status: {}
 

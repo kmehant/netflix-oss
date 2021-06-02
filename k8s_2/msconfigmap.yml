@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    move2kube.konveyor.io/service: msconfigmap
+  name: msconfigmap
+  namespace: mehant
+data:
+  movie-service.yaml: |-
+    server:
+      port: 8082
+    feign:
+      hystrix:
+        enabled: true

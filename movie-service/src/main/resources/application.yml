@@ -1,5 +1,3 @@
-server:
-  port: 8082
 spring:
   application:
     name: movie-service
@@ -8,11 +6,11 @@ spring:
     driver-class-name: org.h2.Driver
   username: penta
   password: bar
-  cloud:
-    config:
-      discovery:
-        enabled: false
-      uri: http://ms-config-server:8888
+  # cloud:
+  #   config:
+  #     discovery:
+  #       enabled: false
+  #     uri: http://ms-config-server:8888
 
 # feign:
 #   hystrix:

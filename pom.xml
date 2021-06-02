@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <modules>
-    <module>ms-config-server</module>
+    <!-- <module>ms-config-server</module> -->
         <module>movie-service</module>
         <module>review-service</module>
         <!-- <module>discovery-service</module> -->

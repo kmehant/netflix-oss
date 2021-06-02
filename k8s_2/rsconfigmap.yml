@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    move2kube.konveyor.io/service: rsconfigmap
+  name: rsconfigmap
+  namespace: mehant
+data:
+  review-service.yaml: |-
+    spring:
+      datasource:
+        url: jdbc:h2:mem:reviews
+        driver-class-name: org.h2.Driver
+        username: penta
+        password: bar
