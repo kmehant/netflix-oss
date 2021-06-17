@@ -1,22 +1,13 @@
+feign:
+  hystrix:
+    enabled: true
 server:
-  port: 8082
+  port: 8080
 spring:
   application:
     name: movie-service
   datasource:
-    url: jdbc:h2:mem:movies
     driver-class-name: org.h2.Driver
-  username: penta
+    url: jdbc:h2:mem:movies
   password: bar
-
-feign:
-  hystrix:
-    enabled: true
-
-eureka:
-  #enabled: true
-  client:
-    #registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://eureka:8761/eureka
+  username: penta

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    move2kube.konveyor.io/service.expose: 'true'
+  creationTimestamp: null
+  labels:
+    move2kube.konveyor.io/service: review-service
+  name: review-service
+  namespace: mehant
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      move2kube.konveyor.io/service: review-service
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        move2kube.konveyor.io/service.expose: 'true'
+      creationTimestamp: null
+      labels:
+        move2kube.konveyor.io/service: review-service
+      name: review-service
+    spec:
+      containers:
+      - env:
+        - name: placeholder
+          value: placeholder
+        image: docker.io/kmehant/review-service:latest
+        imagePullPolicy: Always
+        name: review-service
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+      restartPolicy: Always
+status: {}

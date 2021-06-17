@@ -8,7 +8,7 @@ import ro.pentalog.pentabar.movieservice.feign.hystrix.ReviewServiceFallback;
 import ro.pentalog.pentabar.movieservice.feign.hystrix.ReviewServiceFallbackFactory;
 import ro.pentalog.pentabar.movieservice.model.MovieReview;
 
-@FeignClient(name = "review-service", /*fallback = ReviewServiceFallback.class,*/ fallbackFactory = ReviewServiceFallbackFactory.class)
+@FeignClient(name = "review-service", /*fallback = ReviewServiceFallback.class,*/ fallbackFactory = ReviewServiceFallbackFactory.class,url = "http://review-service:8080")
 public interface ReviewsFeignClient {
 
     @GetMapping("/reviews/search/findAllByMovieId")

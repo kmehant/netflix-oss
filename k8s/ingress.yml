@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: mehant
+  namespace: mehant
+spec:
+  rules:
+  - host: mehant.irlhc12-cf7808d3396a7c1915bd1818afbfb3c0-0000.us-south.containers.appdomain.cloud
+    http:
+      paths:
+      - backend:
+          serviceName: movie-service
+          servicePort: 8080
+        path: /movies-service(/|$)(.*)
+        pathType: Prefix
+      - backend:
+          serviceName: review-service
+          servicePort: 8080
+        path: /review-service(/|$)(.*)
+        pathType: Prefix
+  tls:
+  - hosts:
+    - mehant.irlhc12-cf7808d3396a7c1915bd1818afbfb3c0-0000.us-south.containers.appdomain.cloud
+    secretName: xxxxxxxx

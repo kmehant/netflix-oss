@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    move2kube.konveyor.io/service.expose: 'true'
+  creationTimestamp: null
+  labels:
+    move2kube.konveyor.io/service: movie-service
+  name: movie-service
+  namespace: mehant
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      move2kube.konveyor.io/service: movie-service
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        move2kube.konveyor.io/service.expose: 'true'
+      creationTimestamp: null
+      labels:
+        move2kube.konveyor.io/service: movie-service
+      name: movie-service
+    spec:
+      containers:
+      - env:
+        - name: placeholder
+          value: placeholder
+        image: docker.io/kmehant/movie-service:latest
+        imagePullPolicy: Always
+        name: movie-service
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+      restartPolicy: Always
+status: {}
